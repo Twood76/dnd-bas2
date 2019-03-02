@@ -36,13 +36,9 @@ namespace App
         public override void OnBackPressed()
         {
             if (this.CurrentLayout is MainLayout)
-            {
                 this.Finish();
-            }
             else
-            {
                 this.CurrentLayout = this._LastLayout;
-            }
         }
     }
 }

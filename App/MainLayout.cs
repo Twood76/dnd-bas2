@@ -19,9 +19,11 @@ namespace App
         public MainLayout(MainActivity context) :
             base(context)
         {
+            this.Orientation = GridOrientation.Vertical;
             Button diceButton = new Button(context);
             diceButton.Click += (object sender, EventArgs args) => context.CurrentLayout = new DiceLayout(context);
             diceButton.Text = "Just the dice!";
+            diceButton.SetWidth(context.Resources.DisplayMetrics.WidthPixels);
             this.AddView(diceButton);
 
 
