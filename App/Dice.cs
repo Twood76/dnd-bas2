@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace App.Mechanics
+namespace App.DnD.Mechanics
 {
     /// <summary>
     /// This class is mostly used as a static class; Dice.Roll(int) will be sufficient for most tasks,
@@ -12,7 +12,7 @@ namespace App.Mechanics
         /// <summary>
         /// Intern generator for integers.
         /// </summary>
-        private static Random Generator = new Random();
+        private static readonly Random Generator = new Random();
 
         /// <summary>
         /// Provides a wrapper for System.Random.
