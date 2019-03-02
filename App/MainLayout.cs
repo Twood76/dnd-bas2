@@ -20,10 +20,13 @@ namespace App
             base(context)
         {
             this.Orientation = GridOrientation.Vertical;
+            //ScrollView scroll = new ScrollView(context);
+
             this.AddView(MainLayout.MakeWithLayout(context, "Just the dice!", new DiceLayout(context)));
             this.AddView(MainLayout.MakeWithLayout(context, "Create new character", new CreationLayout(context)));
             this.AddView(MainLayout.MakeWithLayout(context, "Inspect existing character", new InspectLayout(context)));
             this.AddView(MainLayout.MakeWithLayout(context, "Settings", new SettingsLayout(context)));
+            //this.AddView(scroll);
         }
 
         private static Button MakeWithLayout(MainActivity context, string text, GridLayout nextLayout)

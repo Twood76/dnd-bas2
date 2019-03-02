@@ -27,9 +27,13 @@ namespace App
                 InputType = Android.Text.InputTypes.ClassNumber,
                 Text = Convert.ToString(context.Settings.ExpectedHeight)
             };
-            height.TextChanged += (object sender, TextChangedEventArgs args) => 
+            height.TextChanged += (object sender, TextChangedEventArgs args) =>
             {
-                context.Settings.ExpectedHeight = Convert.ToInt32(height.Text);
+                try
+                {
+                    context.Settings.ExpectedHeight = Convert.ToInt32(height.Text);
+                }
+                catch (Exception) { }
                 context.SaveSettings();
             };
             this.AddView(height);

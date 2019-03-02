@@ -22,6 +22,7 @@ namespace App
             : base(context)
         {
             this.Orientation = GridOrientation.Vertical;
+
             this.AddView(DiceLayout.MakeWithCount(context, 20));
             this.AddView(DiceLayout.MakeWithCount(context, 12));
             this.AddView(DiceLayout.MakeWithCount(context, 10));

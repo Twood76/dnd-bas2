@@ -7,6 +7,7 @@ using Android.Widget;
 using System.Xml.Serialization;
 using System.Xml;
 using System.IO;
+using Android.Views;
 
 namespace App
 {
@@ -26,7 +27,9 @@ namespace App
                 else
                     this._LastLayout = new MainLayout(this);
                 this._CurrentLayout = value;
-                SetContentView(this._CurrentLayout);
+                ScrollView scroller = new ScrollView(this);
+                scroller.AddView(value);
+                SetContentView(scroller);
             }
         }
 
