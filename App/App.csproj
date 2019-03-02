@@ -57,8 +57,10 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreationLayout.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="DiceLayout.cs" />
+    <Compile Include="InspectLayout.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainLayout.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
