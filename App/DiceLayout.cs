@@ -20,13 +20,13 @@ namespace App
         {
             this.Orientation = GridOrientation.Vertical;
 
-            DiceLayout.MakeWithCount(context, this, 20);
-            DiceLayout.MakeWithCount(context, this, 12);
-            DiceLayout.MakeWithCount(context, this, 10);
-            DiceLayout.MakeWithCount(context, this, 8);
-            DiceLayout.MakeWithCount(context, this, 6);
-            DiceLayout.MakeWithCount(context, this, 4);
-            DiceLayout.MakeWithCount(context, this, 100);
+            this.AddView(DiceLayout.MakeWithCount(context, 20));
+            this.AddView(DiceLayout.MakeWithCount(context, 12));
+            this.AddView(DiceLayout.MakeWithCount(context, 10));
+            this.AddView(DiceLayout.MakeWithCount(context, 8));
+            this.AddView(DiceLayout.MakeWithCount(context, 6));
+            this.AddView(DiceLayout.MakeWithCount(context, 4));
+            this.AddView(DiceLayout.MakeWithCount(context, 100));
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace App
         /// <param name="con"></param>
         /// <param name="num"></param>
         /// <returns></returns>
-        private static void MakeWithCount(MainActivity con, DiceLayout diceLayout, int num)
+        private static LinearLayout MakeWithCount(MainActivity con, int num)
         {
             int pixelWidth = con.Resources.DisplayMetrics.WidthPixels;
             int pixelHeight = con.Settings.ExpectedHeight;
@@ -78,8 +78,7 @@ namespace App
                 res3.Text = "4x " + numString + ":\n" + Convert.ToString(Dice.Roll(num) + Dice.Roll(num) + Dice.Roll(num) + Dice.Roll(num));
             linear.AddView(res3);
 
-            
-            diceLayout.AddView(linear);
+            return linear;
         }
     }
 }
