@@ -18,6 +18,10 @@ namespace App
         {
             this.Orientation = GridOrientation.Vertical;
 
+            TextView heightDescriptor = new TextView(context)
+            {
+                Text = "The height of every button (in px): "
+            };
             EditText height = new EditText(context)
             {
                 InputType = Android.Text.InputTypes.ClassNumber,
@@ -32,6 +36,7 @@ namespace App
                 catch (Exception) { }
                 context.SaveSettings();
             };
+            this.AddView(heightDescriptor);
             this.AddView(height);
         }
     }
