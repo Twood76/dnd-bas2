@@ -32,9 +32,9 @@ namespace App
                 try
                 {
                     context.Settings.ExpectedHeight = Convert.ToInt32(height.Text);
+                    context.SaveSettings();
                 }
                 catch (Exception) { }
-                context.SaveSettings();
             };
             this.AddView(heightDescriptor);
             this.AddView(height);
