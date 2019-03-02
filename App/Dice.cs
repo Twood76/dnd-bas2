@@ -12,7 +12,7 @@ namespace App.DnD.Mechanics
         /// <summary>
         /// Intern generator for integers.
         /// </summary>
-        private static readonly Random Generator = new Random();
+        private static Random Generator = new Random();
 
         /// <summary>
         /// Provides a wrapper for System.Random.
@@ -23,6 +23,14 @@ namespace App.DnD.Mechanics
         {
             //Read IntelliSense method description
             return Dice.Generator.Next(sides) + 1;
+        }
+
+        /// <summary>
+        /// Sets the current generator's time to a new seed.
+        /// </summary>
+        public static void Reseed()
+        {
+            Dice.Generator = new Random(DateTime.Now.Millisecond);
         }
         #endregion
 
