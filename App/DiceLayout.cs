@@ -5,8 +5,15 @@ using App.DnD.Mechanics;
 
 namespace App
 {
+    /// <summary>
+    /// A layout just for rolling dice.
+    /// </summary>
     public class DiceLayout : GridLayout
     {
+        /// <summary>
+        /// Basic constructor
+        /// </summary>
+        /// <param name="context"></param>
         public DiceLayout(MainActivity context)
             : base(context)
         {
@@ -29,6 +36,12 @@ namespace App
             //this.AddView(DiceLayout.MakeWithCount(context, numberPicker.Value));
         }
 
+        /// <summary>
+        /// A helper function
+        /// </summary>
+        /// <param name="con"></param>
+        /// <param name="num"></param>
+        /// <returns></returns>
         private static Button MakeWithCount(MainActivity con, int num)
         {
             Button res = new Button(con);

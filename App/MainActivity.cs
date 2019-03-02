@@ -8,6 +8,9 @@ using System.IO;
 
 namespace App
 {
+    /// <summary>
+    /// The main actitvity.
+    /// </summary>
     [Activity(Label = "DnDMaster", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
