@@ -16,13 +16,6 @@ namespace App
         private GridLayout _CurrentLayout;
         private GridLayout _LastLayout;
 
-        public const string SettingsPath = "/storage/sdcard0/Android/data/DnDMaster/Settings.xml";
-
-        private Stream SettingsStream = new FileStream(MainActivity.SettingsPath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-        private readonly XmlSerializer SettingsSerializer = new XmlSerializer(typeof(Settings));
-
-        public Settings Settings { get; set; }
-
         public GridLayout CurrentLayout
         {
             get => this._CurrentLayout;
@@ -36,6 +29,13 @@ namespace App
                 SetContentView(this._CurrentLayout);
             }
         }
+
+        public const string SettingsPath = "/storage/sdcard0/Android/data/DnDMaster/Settings.xml";
+
+        private Stream SettingsStream = new FileStream(MainActivity.SettingsPath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+        private readonly XmlSerializer SettingsSerializer = new XmlSerializer(typeof(Settings));
+
+        public Settings Settings { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -63,7 +63,7 @@ namespace App
             if (this.CurrentLayout is MainLayout)
                 this.Finish();
             else
-                this.CurrentLayout = this._LastLayout;
+                this.CurrentLayout = new MainLayout(this);
         }
     }
 }
