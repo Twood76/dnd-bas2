@@ -15,17 +15,12 @@ namespace App
     public class MainActivity : AppCompatActivity
     {
         private GridLayout _CurrentLayout;
-        private GridLayout _LastLayout;
 
         public GridLayout CurrentLayout
         {
             get => this._CurrentLayout;
             set
             {
-                if (this._CurrentLayout != null)
-                    this._LastLayout = this._CurrentLayout;
-                else
-                    this._LastLayout = new MainLayout(this);
                 this._CurrentLayout = value;
                 ScrollView scroller = new ScrollView(this);
                 scroller.AddView(value);
