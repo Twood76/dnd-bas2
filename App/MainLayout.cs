@@ -20,13 +20,20 @@ namespace App
             base(context)
         {
             this.Orientation = GridOrientation.Vertical;
-            Button diceButton = new Button(context);
-            diceButton.Click += (object sender, EventArgs args) => context.CurrentLayout = new DiceLayout(context);
-            diceButton.Text = "Just the dice!";
-            diceButton.SetWidth(context.Resources.DisplayMetrics.WidthPixels);
-            this.AddView(diceButton);
+            this.AddView(MainLayout.MakeWithLayout(context, "Just the dice!", new DiceLayout(context)));
+            this.AddView(MainLayout.MakeWithLayout(context, "Create new character", new CreationLayout(context)));
+            this.AddView(MainLayout.MakeWithLayout(context, "Inspect existing character", new InspectLayout(context)));
+            this.AddView(MainLayout.MakeWithLayout(context, "Settings", new SettingsLayout(context)));
+        }
 
-
+        private static Button MakeWithLayout(MainActivity context, string text, GridLayout nextLayout)
+        {
+            Button res = new Button(context);
+            res.Click += (object sender, EventArgs args) => context.CurrentLayout = nextLayout;
+            res.Text = text;
+            res.SetWidth(context.Resources.DisplayMetrics.WidthPixels);
+            res.SetHeight(context.Settings.ExpectedHeight);
+            return res;
         }
     }
 }

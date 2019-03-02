@@ -17,6 +17,7 @@ namespace App
         public CreationLayout(MainActivity context) :
             base(context)
         {
+            this.Orientation = GridOrientation.Vertical;
 
         }
     }

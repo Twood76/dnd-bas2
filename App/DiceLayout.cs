@@ -47,6 +47,7 @@ namespace App
             res.Click += (object sender, EventArgs e) => res.Text = "Roll " + numString + 
                 ": " + Convert.ToString(Dice.Roll(num)).PadLeft(numString.Length, '0');
             res.SetWidth(con.Resources.DisplayMetrics.WidthPixels);
+            res.SetHeight(con.Settings.ExpectedHeight);
             return res;
         }
     }
