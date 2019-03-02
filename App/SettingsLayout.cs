@@ -24,7 +24,8 @@ namespace App
 
             EditText height = new EditText(context)
             {
-                InputType = Android.Text.InputTypes.ClassNumber
+                InputType = Android.Text.InputTypes.ClassNumber,
+                Text = Convert.ToString(context.Settings.ExpectedHeight)
             };
             height.TextChanged += (object sender, TextChangedEventArgs args) => 
             {
