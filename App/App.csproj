@@ -57,16 +57,17 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreationLayout.cs" />
+    <Compile Include="Layouts\CreationLayout.cs" />
     <Compile Include="Dice.cs" />
-    <Compile Include="DiceLayout.cs" />
-    <Compile Include="InspectLayout.cs" />
+    <Compile Include="Layouts\DiceLayout.cs" />
+    <Compile Include="Layouts\InspectLayout.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="MainLayout.cs" />
+    <Compile Include="Layouts\MainLayout.cs" />
+    <Compile Include="Mechanics\Character.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="SettingsLayout.cs" />
+    <Compile Include="Layouts\SettingsLayout.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
