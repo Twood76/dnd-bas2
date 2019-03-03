@@ -63,7 +63,12 @@
     <Compile Include="Layouts\InspectLayout.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Layouts\MainLayout.cs" />
+    <Compile Include="Mechanics\Armor.cs" />
+    <Compile Include="Mechanics\Attributes.cs" />
     <Compile Include="Mechanics\Character.cs" />
+    <Compile Include="Mechanics\Misc.cs" />
+    <Compile Include="Mechanics\Race.cs" />
+    <Compile Include="Mechanics\Type.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
