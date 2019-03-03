@@ -7,6 +7,11 @@ namespace App.DnD.Mechanics
 {
     public class Character
     {
+        public Character()
+        {
+
+        }
+
         public Character(Attributes attributes, Armor armor, Race race, Misc misc, Type type)
         {
             this.Attributes = attributes + race.Attributes;

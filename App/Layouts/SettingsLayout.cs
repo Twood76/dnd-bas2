@@ -27,6 +27,7 @@ namespace App
                 Text = "Sets the height of every button in pixels. Current: " + Convert.ToString(context.Settings.ExpectedHeight),
             };
             heightButton.SetHeight(context.Settings.ExpectedHeight);
+            heightButton.SetWidth(context.Settings.ExpectedWidth);
             heightButton.Click += (object sender, EventArgs args) =>
             {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(context);
@@ -58,6 +59,7 @@ namespace App
                 Text = "Reseeds the generator for random numbers using the current time."
             };
             reseedButton.SetHeight(context.Settings.ExpectedHeight);
+            reseedButton.SetWidth(context.Settings.ExpectedWidth);
             reseedButton.Click += (object sender, EventArgs args) => Dice.Reseed();
             this.AddView(reseedButton);
         }

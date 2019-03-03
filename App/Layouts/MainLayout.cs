@@ -35,7 +35,7 @@ namespace App
             Button res = new Button(context);
             res.Click += (object sender, EventArgs args) => context.CurrentLayout = nextLayout;
             res.Text = text;
-            res.SetWidth(context.Resources.DisplayMetrics.WidthPixels);
+            res.SetWidth(context.Settings.ExpectedWidth);
             res.SetHeight(context.Settings.ExpectedHeight);
             return res;
         }

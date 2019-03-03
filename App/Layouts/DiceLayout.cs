@@ -37,7 +37,7 @@ namespace App
         /// <returns></returns>
         private static LinearLayout MakeWithCount(MainActivity con, int num)
         {
-            int pixelWidth = con.Resources.DisplayMetrics.WidthPixels;
+            int pixelWidth = con.Settings.ExpectedWidth;
             int pixelHeight = con.Settings.ExpectedHeight;
             LinearLayout linear = new LinearLayout(con)
             {

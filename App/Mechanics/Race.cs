@@ -10,7 +10,7 @@
         public Attributes Attributes { get; set; }
 
 
-        public Race Human
+        public static Race Human
         {
             get
             {
@@ -29,7 +29,7 @@
             }
         }
 
-        public Race Elf
+        public static Race Elf
         {
             get
             {
@@ -48,7 +48,7 @@
             }
         }
 
-        public Race Dwarf
+        public static Race Dwarf
         {
             get
             {
@@ -67,7 +67,7 @@
             }
         }
 
-        public Race Half_Elf
+        public static Race Half_Elf
         {
             get
             {
@@ -86,7 +86,7 @@
             }
         }
 
-        public Race Half_Orc
+        public static Race Half_Orc
         {
             get
             {
@@ -105,7 +105,7 @@
             }
         }
 
-        public Race Gnome
+        public static Race Gnome
         {
             get
             {
@@ -124,7 +124,7 @@
             }
         }
 
-        public Race Halfling
+        public static Race Halfling
         {
             get
             {

@@ -6,5 +6,7 @@
     public class Settings
     {
         public int ExpectedHeight { get; set; }
+
+        public int ExpectedWidth { get; set; }
     }
 }
