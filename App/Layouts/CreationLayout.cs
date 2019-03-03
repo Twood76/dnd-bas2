@@ -33,60 +33,32 @@ namespace App
             raceButton.SetHeight(context.Settings.ExpectedHeight);
             raceButton.Click += (object sender, EventArgs e) =>
             {
-                Collection<string> strings = new Collection<string>()
-                {
-                    "Human",
-                    "Elf",
-                    "Half_Elf",
-                    "Half_Orc",
-                    "Gnome",
-                    "Dwarf",
-                    "Halfling"
-                };
-
-                EditText raceText = new EditText(context)
-                {
-                    Text = "e. g. Half_Elf"
-                };
+                string selectedString;
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.SetView(raceText);
-                builder.SetPositiveButton("OK!", (object ssender, DialogClickEventArgs sargs) =>
+                GridLayout gridLayout = new GridLayout(context)
                 {
-                    if (strings.Contains(raceText.Text))
+                    Orientation = GridOrientation.Vertical,
+                };
+                foreach (Race rac in Race.AllRaces)
+                {
+                    Button selectButton = new Button(context)
                     {
-                        switch (raceText.Text)
-                        {
-                            case "Human":
-                                character.Race = Race.Human;
-                                break;
-                            case "Elf":
-                                character.Race = Race.Elf;
-                                break;
-                            case "Half_Elf":
-                                character.Race = Race.Half_Elf;
-                                break;
-                            case "Half_Orc":
-                                character.Race = Race.Half_Orc;
-                                break;
-                            case "Gnome":
-                                character.Race = Race.Gnome;
-                                break;
-                            case "Dwarf":
-                                character.Race = Race.Dwarf;
-                                break;
-                            case "Halfling":
-                                character.Race = Race.Halfling;
-                                break;
-                        }
-                        raceButton.Text = "Race: " + raceText.Text;
-                    }
-                    else
+                        Text = rac.Identifier,
+                    };
+                    selectButton.SetHeight(context.Settings.ExpectedHeight);
+                    selectButton.SetWidth(context.Settings.ExpectedWidth);
+                    selectButton.Click += (object asvfas, EventArgs asfasf) =>
                     {
-                        character.Race = Race.Human;
-                        raceButton.Text = "Race: Human";
-                    }
-                });
+                        selectedString = selectButton.Text;
+                        raceButton.Text = "Race: " + selectButton.Text;
+                        character.Race = rac;
+                    };
+                    gridLayout.AddView(selectButton);
+                }
+                ScrollView scroller = new ScrollView(context);
+                scroller.AddView(gridLayout);
+                builder.SetView(scroller);
                 builder.Create().Show();
             };
             this.AddView(raceButton);

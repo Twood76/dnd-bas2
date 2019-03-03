@@ -1,4 +1,6 @@
-﻿namespace App.DnD.Mechanics
+﻿using System.Collections.ObjectModel;
+
+namespace App.DnD.Mechanics
 {
     public class Race
     {
@@ -8,6 +10,8 @@
         }
 
         public Attributes Attributes { get; set; }
+
+        public string Identifier { get; set; }
 
 
         public static Race Human
@@ -24,7 +28,8 @@
                         Intelligence = 0,
                         Wisdom = 0,
                         Charisma = 0,
-                    }
+                    },
+                    Identifier = "Human",
                 };
             }
         }
@@ -43,7 +48,8 @@
                         Intelligence = 0,
                         Wisdom = 0,
                         Charisma = 0,
-                    }
+                    },
+                    Identifier = "Elf",
                 };
             }
         }
@@ -62,7 +68,8 @@
                         Intelligence = 0,
                         Wisdom = 0,
                         Charisma = -2,
-                    }
+                    },
+                    Identifier = "Dwarf",
                 };
             }
         }
@@ -81,7 +88,8 @@
                         Intelligence = 0,
                         Wisdom = 0,
                         Charisma = 0,
-                    }
+                    },
+                    Identifier = "Half-Elf",
                 };
             }
         }
@@ -99,8 +107,9 @@
                         Constitution = 0,
                         Intelligence = -2,
                         Wisdom = 0,
-                        Charisma =-2,
-                    }
+                        Charisma = -2,
+                    },
+                    Identifier = "Half-Orc",
                 };
             }
         }
@@ -119,7 +128,8 @@
                         Intelligence = 0,
                         Wisdom = 0,
                         Charisma = 0,
-                    }
+                    },
+                    Identifier = "Gnome",
                 };
             }
         }
@@ -138,9 +148,21 @@
                         Intelligence = 0,
                         Wisdom = 0,
                         Charisma = 0,
-                    }
+                    },
+                    Identifier = "Halfling",
                 };
             }
         }
+
+        public static readonly Collection<Race> AllRaces = new Collection<Race>()
+        {
+            Race.Human,
+            Race.Elf,
+            Race.Half_Elf,
+            Race.Half_Orc,
+            Race.Gnome,
+            Race.Dwarf,
+            Race.Halfling
+        };
     }
 }

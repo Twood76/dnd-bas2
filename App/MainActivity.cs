@@ -28,9 +28,9 @@ namespace App
             }
         }
 
-        public const string SettingsPath = "/storage/sdcard0/Android/data/DnDMaster/Settings.xml";
+        public const string MAIN_PATH = "/storage/sdcard0/Android/data/DnDMaster/";
 
-        private Stream SettingsStream = new FileStream(MainActivity.SettingsPath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+        private Stream SettingsStream = new FileStream(MainActivity.MAIN_PATH + "Settings.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
         private readonly XmlSerializer SettingsSerializer = new XmlSerializer(typeof(Settings));
 
         public Settings Settings { get; set; }
@@ -51,8 +51,8 @@ namespace App
         public void SaveSettings()
         {
             this.SettingsStream.Close();
-            File.WriteAllBytes(MainActivity.SettingsPath, new byte[0]);
-            this.SettingsStream = new FileStream(MainActivity.SettingsPath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            File.WriteAllBytes(MainActivity.MAIN_PATH + "Settings.xml", new byte[0]);
+            this.SettingsStream = new FileStream(MainActivity.MAIN_PATH + "Settings.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             this.SettingsSerializer.Serialize(this.SettingsStream, this.Settings);
         }
 
