@@ -1,9 +1,11 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Widget;
-using App.DnD.Mechanics;
+
 using System;
 using System.Collections.ObjectModel;
+
+using App.DnD.Mechanics;
 
 namespace App
 {

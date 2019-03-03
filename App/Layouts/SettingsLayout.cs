@@ -1,8 +1,9 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Text;
 using Android.Widget;
+
+using System;
 
 using App.DnD.Mechanics;
 

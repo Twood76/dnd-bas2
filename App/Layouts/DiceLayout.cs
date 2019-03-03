@@ -1,6 +1,6 @@
-﻿using System;
-using Android.Views;
-using Android.Widget;
+﻿using Android.Widget;
+
+using System;
 
 using App.DnD.Mechanics;
 

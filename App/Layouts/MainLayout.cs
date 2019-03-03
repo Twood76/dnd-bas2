@@ -1,5 +1,6 @@
-﻿using System;
-using Android.Widget;
+﻿using Android.Widget;
+
+using System;
 
 namespace App
 {
