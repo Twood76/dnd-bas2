@@ -9,7 +9,7 @@ namespace App.DnD.Mechanics
     {
         public Character(Attributes attributes, Armor armor, Race race, Misc misc, Type type)
         {
-            this.Attributes = attributes;
+            this.Attributes = attributes + race.Attributes;
             this.Armor = armor;
             this.Race = race;
             this.Misc = misc;
