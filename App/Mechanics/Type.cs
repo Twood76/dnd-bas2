@@ -1,4 +1,6 @@
-﻿namespace App.Mechanics
+﻿using System.Collections.ObjectModel;
+
+namespace App.Mechanics
 {
     public class Type
     {
@@ -9,7 +11,7 @@
 
         public int SkillsPerLevel { get; set; }
 
-        public Type Fighter
+        public static Type Fighter
         {
             get
             {
@@ -20,7 +22,7 @@
             }
         }
 
-        public Type Cleric
+        public static Type Cleric
         {
             get
             {
@@ -31,7 +33,7 @@
             }
         }
 
-        public Type Bard
+        public static Type Bard
         {
             get
             {
@@ -42,7 +44,7 @@
             }
         }
 
-        public Type Barbarian
+        public static Type Barbarian
         {
             get
             {
@@ -53,7 +55,7 @@
             }
         }
 
-        public Type Druid
+        public static Type Druid
         {
             get
             {
@@ -64,7 +66,7 @@
             }
         }
 
-        public Type Monk
+        public static Type Monk
         {
             get
             {
@@ -75,7 +77,7 @@
             }
         }
 
-        public Type Paladin
+        public static Type Paladin
         {
             get
             {
@@ -86,7 +88,7 @@
             }
         }
 
-        public Type Ranger
+        public static Type Ranger
         {
             get
             {
@@ -97,7 +99,7 @@
             }
         }
 
-        public Type Rogue
+        public static Type Rogue
         {
             get
             {
@@ -108,7 +110,7 @@
             }
         }
 
-        public Type Sorcerer
+        public static Type Sorcerer
         {
             get
             {
@@ -119,7 +121,7 @@
             }
         }
 
-        public Type Wizard
+        public static Type Wizard
         {
             get
             {
@@ -129,5 +131,20 @@
                 };
             }
         }
+
+        public static Collection<Type> AllTypes = new Collection<Type>()
+        {
+            Type.Barbarian,
+            Type.Bard,
+            Type.Cleric,
+            Type.Druid,
+            Type.Fighter,
+            Type.Monk,
+            Type.Paladin,
+            Type.Ranger,
+            Type.Rogue,
+            Type.Sorcerer,
+            Type.Wizard,
+        };
     }
 }
